@@ -25,7 +25,7 @@ This repository provided a simple solution for you to get details and location o
 
 1. Start the local server with `npm start`.;
 
-2. On your browser, access the address http://localhost:8000;
+2. On your browser, access the address http://localhost:3000;
 
 3. Explore the posts funcionalities: 
 
