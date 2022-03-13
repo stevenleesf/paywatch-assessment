@@ -15,7 +15,7 @@ This repository provided a simple solution for you to get details and location o
 2. Create a new folder in your machine, go inside it and clone this repository. 
 <span style="margin-left: 25px;">```git clone https://github.com/stevenleesf/paywatch-assessment.git```</span> 
 
-3. Install the required Node modules (`django`):
+3. Install the required Node modules:
 <span style="margin-left: 25px;">```npm install```</span>
 
 <br />
