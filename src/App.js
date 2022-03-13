@@ -174,57 +174,61 @@ function App() {
               </FormControl>
             ) : <BeatLoader css={override} size={20} loading={loading} color={"#000"} speedMultiplier={1.5} />}
           </Col>
-          <Col md={4} className="d-flex justify-content-flex-start">
+          <Col lg={4} md={12} className="d-flex justify-content-flex-start">
             {selectedCountry.latlng ? (
               <Map height={450} center={selectedCountry.latlng} zoom={zoom} provider={maptilerProvider} dprs={[1, 2]}  >
                 <Marker width={50} anchor={selectedCountry.latlng} color="#fff" />
                 <Overlay anchor={selectedCountry.latlng} offset={[9, 54]} >
-                  <p className="text-black">{selectedCountry.name.charAt(0)}</p>
+                  {language === 'en' ? (
+                        <p className="text-black">{selectedCountry.name.charAt(0)}</p>
+                      ) : <p className="text-black">{selectedCountry.translations[language].charAt(0)}</p> }
                 </Overlay>
               </Map>
             ) : <BeatLoader css={override} size={20} loading={loading} color={"#000"} speedMultiplier={1.5} />}
           </Col>
-          <Col md={4} >
+          <Col lg={4} md={12} className="mb-4" >
             <div className="text-details">
               <Row className="d-flex justify-content-start w-100">
                 <Col md={10}>
-                  <p><span>{selectedCountry.name}</span></p>
+                  {language === 'en' ? (
+                        <p>{selectedCountry.name}</p>
+                      ) : <p>{selectedCountry.translations[language]}</p> }
                 </Col>
                 <Col md={1}>
-                  <img src={selectedCountry.flag} alt="flag" width="50" height="50" />
+                  <img src={selectedCountry.flag} alt="flag" width="75" height="50" />
                 </Col>
               </Row>
               <Row className="d-flex justify-content-start w-100">
-                <Col md={3}>
-                  <p><span>Capital:</span></p>
+                <Col md={3} sm="auto">
+                  <p>Capital:</p>
                 </Col>
-                <Col md={9}>
-                  <p><span>{selectedCountry.capital}</span></p>
-                </Col>
-              </Row>
-              <Row className="d-flex justify-content-start w-100">
-                <Col md={3}>
-                  <p><span>Area:</span></p>
-                </Col>
-                <Col md={9}>
-                  <p><span>{selectedCountry.area}</span></p>
+                <Col md={9} sm="auto">
+                  <p>{selectedCountry.capital}</p>
                 </Col>
               </Row>
               <Row className="d-flex justify-content-start w-100">
-                <Col md={3}>
-                  <p><span>Region:</span></p>
+                <Col md={3} sm="auto">
+                  <p>Area:</p>
                 </Col>
-                <Col md={9}>
-                  <p><span>{selectedCountry.region}</span></p>
+                <Col md={9} sm="auto">
+                  <p>{selectedCountry.area}</p>
                 </Col>
               </Row>
               <Row className="d-flex justify-content-start w-100">
-                <Col md={5}>
-                  <p><span>Regional Blocs:</span></p>
+                <Col md={3} sm="auto">
+                  <p>Region:</p>
                 </Col>
-                <Col md={7}>
+                <Col md={9} sm="auto">
+                  <p>{selectedCountry.region}</p>
+                </Col>
+              </Row>
+              <Row className="d-flex justify-content-start w-100">
+                <Col md={5} sm="auto">
+                  <p>Regional Blocs:</p>
+                </Col>
+                <Col md={7} sm="auto">
                   {selectedCountry.regionalBlocs?.map((data, index) => (
-                    <span>{data.name}</span>
+                    <p key={index}>{data.name}</p>
                   ))}
                 </Col>
               </Row>
