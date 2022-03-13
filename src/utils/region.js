@@ -1,0 +1,15 @@
+export const regionBloc = [
+    { value: 'eu', label: 'European Union'},
+    { value: 'efta', label: 'European Free Trade Association' },
+    { value: 'caricom', label: 'Caribbean Community' },
+    { value: 'pa', label: 'Pacific Alliance'},
+    { value: 'au', label: 'African Union' },
+    { value: 'usan', label: 'Union of South American Nations' },
+    { value: 'eeu', label: 'Eurasian Economic Union' },
+    { value: 'al', label: 'Arab League' },
+    { value: 'asean', label: 'Association of Southeast Asian Nations' },
+    { value: 'cais', label: 'Central American Integration System' },
+    { value: 'cefta', label: 'Central European Free Trade Agreement' },
+    { value: 'nafta', label: 'North American Free Trade Agreement' },
+    { value: 'saarc', label: 'South Asian Association for Regional Cooperation' },
+  ];
